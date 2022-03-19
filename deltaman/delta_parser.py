@@ -1,6 +1,7 @@
 """
 Thanks to https://stackoverflow.com/questions/9775743/how-can-i-parse-free-text-time-intervals-in-python-ranging-from-years-to-second
 """  # noqa
+from typing import List, Union
 from datetime import timedelta
 from functools import reduce
 from operator import add, mul
@@ -20,16 +21,16 @@ units = {
 
 
 class TreeToTimeDelta(Transformer):
-    def delta(self, tree: list[timedelta]) -> timedelta:
+    def delta(self, tree: List[timedelta]) -> timedelta:
         return reduce(add, tree, timedelta(seconds=0))
 
-    def time(self, tree: list[float | timedelta]) -> timedelta:
+    def time(self, tree: List[Union[float, timedelta]]) -> timedelta:
         return mul(*tree)
 
-    def unit(self, tokens: list[Token]) -> timedelta:
+    def unit(self, tokens: List[Token]) -> timedelta:
         return units[tokens[0].type.lower()]
 
-    def number(self, tokens: list[Token]) -> float:
+    def number(self, tokens: List[Token]) -> float:
         return float(tokens[0].value)
 
 
