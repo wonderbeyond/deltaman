@@ -1,5 +1,9 @@
 # Deltaman - Parsing human time intervals
 
+```shell
+pip install deltaman
+```
+
 ## Getting Started
 
 ```python

@@ -3,6 +3,7 @@ import re
 from setuptools import setup
 
 proj_name = main_pkg = 'deltaman'
+github_url = f"https://github.com/wonderbeyond/{proj_name}"
 
 with open(f'{main_pkg}/__init__.py') as f:
     __version__, = re.findall('__version__: str = "(.*)"', f.read())
@@ -28,7 +29,7 @@ setup(
     license="MIT",
     license_files=('LICENSE',),
     keywords="Python human timedelta parsing",
-    url=f"https://github.com/wonder/{proj_name}",
+    url=github_url,
     zip_safe=True,
     classifiers=[
         "Intended Audience :: Developers",
@@ -37,4 +38,9 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    project_urls={
+        'Documentation': github_url,
+        'Source': github_url,
+        'Tracker': github_url,
+    },
 )
