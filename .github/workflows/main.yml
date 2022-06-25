@@ -45,4 +45,4 @@ jobs:
         poetry install -E building
         poetry run make dist
     - name: Publish PyPI
-      run: poetry publish -u __token__ -p "$PYPI_API_TOKEN"
+      run: poetry publish -u __token__ -p "${{ secrets.PYPI_API_TOKEN }}"
