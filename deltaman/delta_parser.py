@@ -5,9 +5,8 @@ from typing import List, Union
 from datetime import timedelta
 from functools import reduce
 from operator import add, mul
-import os.path
 
-from lark import Lark, Transformer, Token
+from ._delta_parser import Lark_StandAlone, Transformer, Token
 
 units = {
     "second": timedelta(seconds=1),
@@ -34,12 +33,7 @@ class TreeToTimeDelta(Transformer):
         return float(tokens[0].value)
 
 
-with open(os.path.join(os.path.dirname(__file__), 'delta.lark')) as f:
-    delta_grammar = f.read()
-
-delta_parser = Lark(
-    delta_grammar, parser='lalr', transformer=TreeToTimeDelta()
-)
+delta_parser = Lark_StandAlone(transformer=TreeToTimeDelta())
 
 if __name__ == '__main__':
     for delta in (

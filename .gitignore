@@ -12,3 +12,5 @@ tags
 /build
 docs/_build
 docs/examples
+
+deltaman/_delta_parser.py

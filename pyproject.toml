@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "deltaman"
+version = "0.0.3"
+description = "Parsing human time intervals"
+authors = ["Wonder <wonderbeyond@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+lark = {version = "^1.1.2", extras = ["build"]}
+pytest = {version = "^7.1.2", extras = ["testing"]}
+tox = {version = "^3.25.0", extras = ["testing"]}
+
+[tool.poetry.dev-dependencies]
+lark = "^1.1.2"
+flake8 = "^4.0.1"
+mypy = "^0.961"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
