@@ -45,4 +45,9 @@ jobs:
         poetry install -E building
         poetry run make dist
     - name: Publish PyPI
-      run: poetry publish -u __token__ -p "${{ secrets.PYPI_API_TOKEN }}"
+      run: |
+        if curl -Isf https://pypi.org/project/deltaman/$(poetry version -s)/ > /dev/null; then
+          echo "Package already exists on PyPI"
+        else
+          poetry publish -u __token__ -p "${{ secrets.PYPI_API_TOKEN }}"
+        fi
