@@ -13,4 +13,4 @@ tags
 docs/_build
 docs/examples
 
-deltaman/_delta_parser.py
+deltaman/_lark_parser.py

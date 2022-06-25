@@ -6,7 +6,7 @@ from datetime import timedelta
 from functools import reduce
 from operator import add, mul
 
-from ._delta_parser import Lark_StandAlone, Transformer, Token
+from ._lark_parser import Lark_StandAlone, Transformer, Token
 
 units = {
     "second": timedelta(seconds=1),
