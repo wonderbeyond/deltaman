@@ -46,6 +46,7 @@ jobs:
         poetry run make dist
     - name: Publish PyPI
       run: |
+        set -ex
         if curl -Isf https://pypi.org/project/deltaman/$(poetry version -s)/ > /dev/null; then
           echo "Package already exists on PyPI"
         else
