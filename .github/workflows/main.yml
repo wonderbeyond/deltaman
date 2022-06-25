@@ -29,6 +29,6 @@ jobs:
       uses: abatilo/actions-poetry@v2.0.0
     - name: Install Dependencies
       run: |
-        poetry install -E build testing
+        poetry install -E build -E testing
     - name: Test with pytest
       run: pytest
