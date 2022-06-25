@@ -7,14 +7,19 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-lark = {version = "^1.1.2", extras = ["build"]}
-pytest = {version = "^7.1.2", extras = ["testing"]}
-tox = {version = "^3.25.0", extras = ["testing"]}
+lark = {version = "^1.1.2", optional = true}
+pytest = {version = "^7.1.2", optional = true}
+tox = {version = "^3.25.0", optional = true}
 
 [tool.poetry.dev-dependencies]
 lark = "^1.1.2"
 flake8 = "^4.0.1"
 mypy = "^0.961"
+
+[tool.poetry.extras]
+building = ["lark"]
+testing = ["pytest", "tox"]
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
