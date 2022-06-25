@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "deltaman"
-version = "0.0.3"
+version = "0.0.4"
 description = "Parsing human time intervals"
 readme = "README.md"
 homepage = "https://github.com/wonderbeyond/deltaman"
